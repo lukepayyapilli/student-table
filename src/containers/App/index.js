@@ -18,7 +18,6 @@ function mapDispatch(dispatch) {
 };
 
 class App extends Component {
-
   render() {
       return (
         <Router>
