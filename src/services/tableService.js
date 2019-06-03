@@ -1,13 +1,14 @@
 
 class tableService {
 
-  static async loadTableData(url, method) {
+  static async loadTableData(url, method, data, headers) {
     const call = await fetch(url, {
       method: method,
-      headers: {'Content-Type': 'application/json'}
+      data: data,
+      headers: headers || {'Content-Type': 'application/json'}
     })
-    const data = await call.json();
-    return data;
+    const result = await call.json();
+    return result;
   }
 }
 

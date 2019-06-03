@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { extractColumnsFromTable } from '../../utils';
-import Table from '../../components/Table';
+import StudentTable from '../../components/StudentTable';
 
-export default class StudentTable extends Component {
+export default class StudentTableContainer extends Component {
 
   formatData = (data) => {
     return {
@@ -23,7 +23,7 @@ export default class StudentTable extends Component {
     } else if (data) {
       let tableData = this.formatData(data);
       return (
-        <Table data={tableData.data} cols={tableData.cols} />
+        <StudentTable data={tableData.data} cols={tableData.cols} />
       );
     } else {
       return (<div> Err, something went wrong.</div>);
