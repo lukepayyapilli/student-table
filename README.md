@@ -1,7 +1,7 @@
 
 In the project directory, you can run:
 
-(make sure to npm install first!)
+(make sure to `npm install` first!)
 
 ### `npm start`
 
