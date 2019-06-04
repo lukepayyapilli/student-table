@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { extractColumnsFromTable } from '../../utils';
 import StudentTable from '../../components/StudentTable';
 
@@ -18,6 +19,7 @@ export default class StudentTableContainer extends Component {
 
   render() {
     const { loaded, data } = this.props;
+    // loading state //
     if (!loaded) {
       return (<div> Loading Data...</div>);
     } else if (data) {
@@ -25,8 +27,15 @@ export default class StudentTableContainer extends Component {
       return (
         <StudentTable data={tableData.data} cols={tableData.cols} />
       );
+    // error state //
     } else {
       return (<div> Err, something went wrong.</div>);
     }
   }
 }
+
+StudentTableContainer.propTypes = {
+    loadTableData: PropTypes.func.isRequired,
+    loaded: PropTypes.bool.isRequired,
+    data: PropTypes.array.isRequired
+};

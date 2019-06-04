@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import StudentRowCell from '../StudentRowCell';
 
 export default class StudentRow extends Component {
 
@@ -7,10 +9,14 @@ export default class StudentRow extends Component {
     // add checkbox for each row //
     let row = [<td key={"checkbox" + data.id}><input type="checkbox"/></td>];
     for (let key in data) {
-      row.push(<td key={key}>{data[key]}</td>);
+      row.push(<StudentRowCell key={data[key]} data={data[key]} />);
     }
     return (
       <tr>{row}</tr>
     )
   }
 }
+
+StudentRow.propTypes = {
+    data: PropTypes.object.isRequired
+};

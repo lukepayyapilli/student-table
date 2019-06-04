@@ -1,12 +1,12 @@
 import { LOAD_TABLE_DATA } from '../constants/actionTypes';
 
-export const initialState = {
+const initialState = {
   loaded: false,
   data: []
 }
+
 const tableReducer = (state = initialState, action) => {
  switch (action.type) {
-
   case LOAD_TABLE_DATA:
     return Object.assign({}, state, {
         ...state,

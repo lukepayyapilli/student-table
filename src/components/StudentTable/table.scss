@@ -1,11 +1,10 @@
 .table-component {
   .table {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 12px;
+    max-width: 100%;
     width: 100%;
     text-align: center;
     border-collapse: collapse;
-    margin: 30px 30px 30px 15px;
 
     thead, tbody, tr, th {
       font-size: 100%;
@@ -20,15 +19,20 @@
 
     tbody {
       display: table-row-group;
+      background-color: #eaedef;
+      td {
+        padding: 15px;
+        border: 1px solid #d9dde2;
+      }
     }
     thead {
       th {
+        background-color: #c7c8c9;
         font-weight: normal;
         font-size: 14px;
-        border-top: none;
         text-align: center;
-        color: #039;
-        padding: 8px 2px;
+        padding: 10px;
+        cursor: pointer;
       }
       tr {
         display: table-row;
@@ -36,9 +40,7 @@
 
       td {
         color: #669;
-        padding: 12px 2px 0;
       }
     }
-
   }
 }

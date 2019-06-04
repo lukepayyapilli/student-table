@@ -4,14 +4,19 @@ import PropTypes from 'prop-types';
 import _ from 'lodash';
 import './table.scss';
 
+
 export default class StudentTable extends Component {
 
   render() {
-    const { cols, data } = this.props;
+    let { cols, data } = this.props;
     // initialize table header with checkbox //
-    let tableHeader = [<th key={"checkbox-header"}><label><input type="checkbox" />Select All</label></th>];
-    cols.forEach((col) => { tableHeader.push(<th data-column={col} key={col}>{col}</th>) });
-    let rows = _.map(data, (obj) => { return (<StudentRow key={obj.id} data={obj} />);});
+    let tableHeader = [<th key={"checkbox-header"}><label>Select All <br/><input type="checkbox" /></label></th>];
+    cols.forEach((col) => { tableHeader.push(<th onClick={this.onClickColumnHeader} data-column={col} key={col}>{_.startCase(col)}</th>) });
+
+    let rows = _.map(data, (obj, index) => {
+      return (<StudentRow key={obj.id} data={obj} />)
+      ;}
+    );
 
     return (
         <div className="table-component">
