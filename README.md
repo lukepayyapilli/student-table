@@ -1,6 +1,8 @@
 
 In the project directory, you can run:
 
+(make sure to npm install first!)
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
