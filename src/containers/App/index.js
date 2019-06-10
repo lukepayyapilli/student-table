@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import { loadTableData } from '../../actions/tableActions';
+import { loadTableData, saveSortFields } from '../../actions/tableActions';
 import StudentTableContainer from '../StudentTableContainer';
 
 function mapState(state) {
   return {
-    loaded: state.tableReducer.loaded,
-    data: state.tableReducer.data
+    loaded: state.tableData.loaded,
+    data: state.tableData.data,
+    fields: state.tableData.fields
   }
 }
 
 function mapDispatch(dispatch) {
   return {
-    loadTableData: () => { loadTableData(dispatch) }
+    loadTableData: () => { loadTableData(dispatch) },
+    saveSortFields: (fields) => { saveSortFields(dispatch, fields)}
   }
 };
 

@@ -5,9 +5,9 @@ import _ from 'lodash';
 export default class StudentRowCell extends Component {
 
   render() {
-    const { data } = this.props;
+    const { data, style } = this.props;
     return (
-      <td>{_.startCase(data)}</td>
+      <td style={style}>{_.startCase(data)}</td>
     )
   }
 }

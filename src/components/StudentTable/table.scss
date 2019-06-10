@@ -43,4 +43,17 @@
       }
     }
   }
+  .page-numbers {
+    list-style: none;
+    display: inline-flex;
+    position: absolute;
+    right: 1%;
+     li {
+       margin: 5px;
+       padding: 10px;
+       border: 1px solid #d9dde2;
+       background-color: #eaedef;
+       cursor: pointer;
+     }
+  }
 }

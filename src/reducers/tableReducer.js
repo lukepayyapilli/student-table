@@ -1,8 +1,9 @@
-import { LOAD_TABLE_DATA } from '../constants/actionTypes';
+import { LOAD_TABLE_DATA, SAVE_SORT_FIELDS } from '../constants/actionTypes';
 
 const initialState = {
   loaded: false,
-  data: []
+  data: [],
+  fields: []
 }
 
 const tableReducer = (state = initialState, action) => {
@@ -13,7 +14,11 @@ const tableReducer = (state = initialState, action) => {
         loaded: action.payload.loaded,
         data: action.payload.data
     })
-
+  case SAVE_SORT_FIELDS:
+    return Object.assign({}, state, {
+      ...state,
+      fields: action.payload.fields
+    })
   default:
    return state
  }

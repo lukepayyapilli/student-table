@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { extractColumnsFromTable } from '../../utils';
 import StudentTable from '../../components/StudentTable';
+const ROWS_PER_PAGE = 10;
 
 export default class StudentTableContainer extends Component {
 
@@ -25,7 +26,7 @@ export default class StudentTableContainer extends Component {
     } else if (data) {
       let tableData = this.formatData(data);
       return (
-        <StudentTable data={tableData.data} cols={tableData.cols} />
+        <StudentTable data={tableData.data} cols={tableData.cols} rowsPerPage={ROWS_PER_PAGE} length={tableData.data.length} {...this.props} />
       );
     // error state //
     } else {
